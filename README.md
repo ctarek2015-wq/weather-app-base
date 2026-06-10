@@ -1,17 +1,35 @@
 # Coding Bootcamp: Weather App
 
-## Available Scripts
+A small React + Vite app that fetches current weather for a city using the OpenWeather APIs.
 
-This project was created using with Vitejs.
+## Setup
 
-In the project directory, please run the following commands:
+1. Install dependencies
 
-`npm install`
+```bash
+npm install
+```
 
-`npm run dev`
+2. Add your API key
 
-The second command will run the app
-To see the rendered output please open http://localhost:5173 in the browser of your choice, EG: Google Chrome.
+```bash
+cp .env.example .env
+```
 
-The page will reload when you make changes.
-You may also see any lint errors in the console.
+Edit `.env` and replace `your_open_weather_api_key_here` with your real Open Weather API key.
+
+3. Run dev server
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+## What it does
+
+- Takes a city name from an input field
+- Calls Open Weather Geocoding API to get city coordinates
+- Uses chained `.then(...)` calls to fetch current weather by coordinates
+- Shows temperature, description, icon, humidity, wind, and feels-like
+- Updates weather when user submits a new city (or the same city again)
